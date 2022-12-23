@@ -1,0 +1,301 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 50px;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #444;
+}
+
+a {
+  text-decoration: none;
+}
+
+.underline {
+  width: 80px;
+  height: 5px;
+  margin: 10px 30px;
+  background-color: royalblue;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #333;
+  z-index: 1;
+}
+nav .nav-item {
+  display: none;
+  padding: 0 10px;
+  line-height: 48px;
+  border-bottom: 2px solid transparent;
+  color: #666;
+  text-transform: uppercase;
+  transition: border-bottom linear 0.3s;
+}
+nav .nav-item:hover {
+  color: #ddd;
+  border-bottom: 2px solid #ddd;
+}
+nav .dropdown {
+  position: relative;
+  display: inline-block;
+}
+nav .dd-button {
+  color: #ddd;
+  padding: 5px 10px;
+  font-size: 28px;
+  cursor: pointer;
+}
+nav .dd-menu {
+  background-color: #333;
+  position: absolute;
+  top: 45px;
+  left: 0;
+  width: 100vw;
+  height: auto;
+  text-align: center;
+}
+nav .dd-menu ul {
+  list-style-type: none;
+}
+nav .dd-menu .dd-item {
+  display: block;
+  height: 100%;
+  margin: 10px 20px;
+  color: #ddd;
+  text-transform: uppercase;
+}
+nav .dd-input {
+  display: none;
+}
+nav .dd-input + .dd-menu {
+  display: none;
+}
+nav .dd-input:checked + .dd-menu {
+  display: block;
+}
+
+header {
+  height: 100vh;
+}
+header .hero-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/hero-small.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+header .hero-shadow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: -1;
+}
+header .hero-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  z-index: 1;
+  color: #ddd;
+}
+header h2 {
+  font-size: 30px;
+  text-transform: uppercase;
+  margin: 20px;
+}
+header span {
+  color: royalblue;
+}
+header p {
+  font-size: 18px;
+  margin: 5px 20px;
+}
+
+.aboutus {
+  height: 100vh;
+}
+.aboutus .aboutus-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../img/aboutus-small.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  z-index: 0;
+}
+.aboutus .aboutus-shadow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: -1;
+}
+.aboutus h2 {
+  text-align: center;
+  text-transform: uppercase;
+  color: #ddd;
+}
+.aboutus .aboutus-text {
+  display: flex;
+  flex-direction: column;
+}
+.aboutus .card {
+  margin: 10px auto;
+  height: 20vh;
+  width: 90vw;
+  border-radius: 10px;
+  background-color: #fff;
+}
+.aboutus .first {
+  background-image: url("../img/aboutus-first.png");
+  background-position: center;
+  background-size: cover;
+  background-color: none;
+}
+.aboutus .second {
+  background-image: url("../img/aboutus-second.png");
+  background-position: center;
+  background-size: cover;
+}
+.aboutus .third {
+  background-image: url("../img/aboutus-third.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.contact {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.contact .contact-us {
+  padding: 40px 20px;
+  color: #ddd;
+  border-left: 5px solid #ddd;
+}
+.contact h2 {
+  font-size: 24px;
+  text-transform: uppercase;
+}
+.contact p {
+  font-size: 18px;
+}
+.contact .social-media {
+  padding: 20px 40px;
+  color: #ddd;
+  border-left: 5px solid #ddd;
+}
+.contact span {
+  font-size: 14px;
+}
+.contact .fa-brands,
+.contact .fa-solid {
+  font-size: 24px;
+  margin-right: 5px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  background-color: #222;
+  color: #ddd;
+}
+footer p {
+  font-size: 20px;
+}
+footer span {
+  font-weight: bold;
+  color: royalblue;
+}
+
+@media (min-width: 992px) {
+  nav {
+    justify-content: center;
+  }
+  nav .nav-item {
+    display: inline-block;
+  }
+  nav .dropdown {
+    display: none;
+  }
+  nav .nav-item {
+    font-size: 16px;
+  }
+  header .hero-image {
+    background-image: url("../img/hero-big.jpg");
+  }
+  header h2 {
+    font-size: 30px;
+  }
+  header p {
+    font-size: 20px;
+  }
+  .aboutus .aboutus-image {
+    background-image: url("../img/aboutus-big.jpg");
+  }
+  .aboutus .hero-text {
+    display: flex;
+    flex-direction: row;
+  }
+  .aboutus .card {
+    height: 400px;
+    width: 400px;
+  }
+  .aboutus .underline {
+    margin-bottom: 30px;
+  }
+  .contact {
+    flex-direction: row;
+  }
+}
+@media (min-width: 768px) {
+  nav .dd-menu {
+    font-size: 20px;
+  }
+}
+@media (min-width: 1020px) {
+  .aboutus .aboutus-text {
+    flex-direction: column;
+  }
+  .aboutus .card {
+    margin-left: 20px;
+  }
+}
+@media (min-width: 1100px) {
+  .aboutus .aboutus-text {
+    flex-direction: row;
+  }
+  .aboutus .card {
+    margin-left: 20px;
+  }
+}/*# sourceMappingURL=style.css.map */
